@@ -14,7 +14,6 @@ namespace DO_AN_NMLT
 
         }
 
-
         public static void ThemLoaiHang(Types.LoaiHang MotLoaHang, ref Types.LoaiHang[] ListLoaiHang)
         {
 
@@ -90,12 +89,14 @@ namespace DO_AN_NMLT
 
 
 
-        public static void XoaLoaiHang(ref Types.LoaiHang[] ListLoaiHang)
+        public static void XoaLoaiHang(ref Types.LoaiHang[] ListLoaiHang, ref Types.MatHang[] ListMatHang)
         {
 
             Console.WriteLine("------");
+
             Console.WriteLine("Nhap ma loai hang can xoa: ");
-            string MaHang = Convert.ToString(Console.ReadLine());
+
+            string MaLoaiHang = Convert.ToString(Console.ReadLine());
 
             int ChieuDaiMang = ListLoaiHang.Length;
 
@@ -104,7 +105,7 @@ namespace DO_AN_NMLT
             // Tim vi tri can xoa
             for (int i = 0; i < ChieuDaiMang; i++)
             {
-                if (MaHang == ListLoaiHang[i].MaLoaiHang)
+                if (MaLoaiHang == ListLoaiHang[i].MaLoaiHang)
                 {
 
                     ViTriCanXoa = i;
@@ -131,7 +132,20 @@ namespace DO_AN_NMLT
 
                 ListLoaiHang = NewListLoaiHang;
 
+
+                for(int i = 0; i < ListMatHang.Length; i++)
+                {
+                    if (ListMatHang[i].LoaiHang == MaLoaiHang)
+                    {
+                        ListMatHang[i].LoaiHang = "";
+                    }
+                }
+
+
                 Console.WriteLine("Xoa Thanh cong");
+
+
+
             }
             else
             {

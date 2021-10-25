@@ -148,12 +148,12 @@ namespace DO_AN_NMLT
             NhapXuatLoaiHang.XuatListLoaiHang(ListLoaiHang);
         }
 
-        static void FucXoaMotLoaiHang(ref Types.LoaiHang[] ListLoaiHang)
+        static void FucXoaMotLoaiHang(ref Types.LoaiHang[] ListLoaiHang, ref Types.MatHang[] ListMatHang)
         {
             Console.WriteLine("---Danh sach loai hang hien tai---");
             NhapXuatLoaiHang.XuatListLoaiHang(ListLoaiHang);
 
-            CRUDLoaiHang.XoaLoaiHang(ref ListLoaiHang);
+            CRUDLoaiHang.XoaLoaiHang(ref ListLoaiHang, ref ListMatHang);
 
             Console.WriteLine("---Danh sach loai hang sau khi xoa---");
             NhapXuatLoaiHang.XuatListLoaiHang(ListLoaiHang);
@@ -206,7 +206,7 @@ namespace DO_AN_NMLT
 
 
         //Main Action Quan Ly Cac Loai Hang
-        public static void QuanLyCacLoaiHang(ref Types.LoaiHang[] ListLoaiHang)
+        public static void QuanLyCacLoaiHang(ref Types.LoaiHang[] ListLoaiHang, ref Types.MatHang[] ListMatHang)
         {
             string Num = "";
 
@@ -240,7 +240,7 @@ namespace DO_AN_NMLT
 
                 if (Num == "5")
                 {
-                    FucXoaMotLoaiHang(ref ListLoaiHang);
+                    FucXoaMotLoaiHang(ref ListLoaiHang, ref ListMatHang);
 
                 }
                 if (Num == "6")

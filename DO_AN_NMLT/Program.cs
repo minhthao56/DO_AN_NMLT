@@ -30,7 +30,7 @@ namespace DO_AN_NMLT
 
                 if(Num == "2")
                 {
-                    Actions.QuanLyCacLoaiHang( ref LisLoaiHang);
+                    Actions.QuanLyCacLoaiHang( ref LisLoaiHang, ref ListMatHang);
                 }
 
             }
